@@ -9,6 +9,19 @@
 	overflow-y: auto;
 }
 
+.sidebar--sm {
+	width: 5%;
+}
+
+.sidebar--sm .sidebar__item span,
+.sidebar__list h3 {
+	display: none;
+}
+
+.sidebar.sidebar--sm hr {
+	width: 50%;
+}
+
 .sidebar__nav img {
 	width: 20px;
 	margin: 0 20px 0 0;
@@ -17,10 +30,12 @@
 .sidebar__item {
 	display: flex;
 	align-items: center;
-	margin: 0 0 20px;
 	width: fit-content;
 	flex-wrap: wrap;
 	cursor: pointer;
+}
+.sidebar__item:not(:last-child) {
+	margin: 0 0 20px;
 }
 
 .sidebar hr {
@@ -28,11 +43,12 @@
 	height: 1px;
 	background-color: #ccc;
 	width: 85%;
+	margin: 25px 0;
 }
 
 .sidebar__list h3 {
 	font-size: 13px;
-	margin: 20px 0;
+	margin: 0 0 20px;
 	color: #5a5a5a;
 }
 

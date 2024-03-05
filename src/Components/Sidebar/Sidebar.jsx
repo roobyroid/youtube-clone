@@ -15,9 +15,9 @@ import tom from '../../assets/tom.png';
 import megan from '../../assets/megan.png';
 import cameron from '../../assets/cameron.png';
 
-const Sidebar = () => {
+const Sidebar = ({ sidebar }) => {
 	return (
-		<aside className="sidebar">
+		<aside className={sidebar ? 'sidebar' : 'sidebar sidebar--sm'}>
 			<nav className="sidebar__nav">
 				<div className="sidebar__item">
 					<img src={home} alt="" />
