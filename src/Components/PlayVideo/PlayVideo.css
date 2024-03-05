@@ -1,0 +1,138 @@
+.play-video {
+	flex-basis: 69%;
+}
+
+.play-video__content {
+	width: 100%;
+}
+
+.play-video h3 {
+	margin: 10px 0 0;
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.play-video__info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 10px 0 0;
+	font-size: 14px;
+	color: #5a5a5a;
+}
+
+.play-video__info span {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 0 0 15px;
+}
+
+.play-video__info img {
+	display: inline-block;
+	width: 20px;
+	margin-right: 8px;
+}
+
+.play-video hr {
+	border: 0;
+	height: 1px;
+	background: #ccc;
+	margin: 10px 0;
+}
+
+.play-video__publisher {
+	display: flex;
+	align-items: center;
+	margin: 20px 0 0;
+}
+
+.play-video__publisher-info {
+	flex: 1;
+	line-height: 18px;
+}
+
+.play-video__publisher img {
+	width: 40px;
+	border-radius: 50%;
+	margin: 0 15px 0 0;
+}
+
+.play-video__publisher-info p {
+	font-weight: 600;
+	color: #000;
+	font-size: 18px;
+}
+
+.play-video__publisher-info span {
+	font-size: 13px;
+	color: #5a5a5a;
+}
+
+.play-video__publisher-btn {
+	background: red;
+	color: #fff;
+	padding: 8px 30px;
+	border: 0;
+	border-radius: 4px;
+	margin: 0 0 0 15px;
+	cursor: pointer;
+}
+
+.play-video__description {
+	padding: 0 0 0 55px;
+	margin: 15px 0;
+}
+
+.play-video__description p {
+	font-size: 14px;
+	color: #5a5a5a;
+	margin: 0 0 5px;
+}
+
+.play-video__description h4 {
+	font-size: 14px;
+	color: #5a5a5a;
+	margin: 15px 0 0;
+}
+
+.play-video__comment {
+	display: flex;
+	align-items: flex-start;
+	margin: 20px 0;
+}
+
+.play-video__comment img {
+	width: 35px;
+	border-radius: 50%;
+	margin: 0 15px 0 0;
+}
+
+.play-video__comment h3 {
+	font-size: 14px;
+	margin: 0 0 2px;
+}
+
+.play-video__comment h3 span {
+	font-size: 12px;
+	color: #5a5a5a;
+	margin: 0 0 0 8px;
+}
+
+.play-video__comment-action {
+	display: flex;
+	align-items: center;
+	margin: 8px 0;
+	font-size: 14px;
+}
+
+.play-video__comment-action img {
+	width: 20px;
+	margin: 0 5px 0 0;
+	border-radius: 0;
+}
+
+.play-video__comment-action span {
+	margin: 0 20px 0 0;
+	color: #5a5a5a;
+}
