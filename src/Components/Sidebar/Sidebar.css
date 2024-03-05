@@ -1,0 +1,43 @@
+.sidebar {
+	background: #fff;
+	width: 15%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 80px 0 0 2%;
+	overflow-y: auto;
+}
+
+.sidebar__nav img {
+	width: 20px;
+	margin: 0 20px 0 0;
+}
+
+.sidebar__item {
+	display: flex;
+	align-items: center;
+	margin: 0 0 20px;
+	width: fit-content;
+	flex-wrap: wrap;
+	cursor: pointer;
+}
+
+.sidebar hr {
+	border: none;
+	height: 1px;
+	background-color: #ccc;
+	width: 85%;
+}
+
+.sidebar__list h3 {
+	font-size: 13px;
+	margin: 20px 0;
+	color: #5a5a5a;
+}
+
+.sidebar__list img {
+	width: 25px;
+	margin: 0 20px 0 0;
+	border-radius: 50%;
+}
