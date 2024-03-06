@@ -25,9 +25,14 @@
 .sidebar__nav img {
 	width: 20px;
 	margin: 0 20px 0 0;
+	padding: 2px 0;
+	transition: border 0.3s;
+	border-bottom: 2px solid transparent;
 }
 
 .sidebar__item {
+	background: transparent;
+	border: none;
 	display: flex;
 	align-items: center;
 	width: fit-content;
@@ -57,4 +62,8 @@
 	width: 25px;
 	margin: 0 20px 0 0;
 	border-radius: 50%;
+}
+
+.sidebar__item.active img {
+	border-color: red;
 }

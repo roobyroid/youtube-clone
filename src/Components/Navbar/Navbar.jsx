@@ -13,6 +13,7 @@ const Navbar = ({ setSidebar }) => {
 			<div className="navbar__left flex">
 				<button
 					className="navbar__menu-toggle"
+					type="button"
 					onClick={() => setSidebar((prev) => !prev)}
 				>
 					<img src={menu_icon} alt="" />

@@ -15,46 +15,82 @@ import tom from '../../assets/tom.png';
 import megan from '../../assets/megan.png';
 import cameron from '../../assets/cameron.png';
 
-const Sidebar = ({ sidebar }) => {
+const Sidebar = ({ sidebar, categoryId, setCategoryId }) => {
 	return (
 		<aside className={sidebar ? 'sidebar' : 'sidebar sidebar--sm'}>
 			<nav className="sidebar__nav">
-				<div className="sidebar__item">
+				<button
+					className={`sidebar__item ${categoryId === 0 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(0)}
+				>
 					<img src={home} alt="" />
 					<span>Home</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 20 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(20)}
+				>
 					<img src={game_icon} alt="" />
 					<span>Game</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 2 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(2)}
+				>
 					<img src={automobiles} alt="" />
 					<span>Automobiles</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 17 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(17)}
+				>
 					<img src={sports} alt="" />
 					<span>Sports</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 24 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(24)}
+				>
 					<img src={entertainment} alt="" />
 					<span>Entertainment</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 28 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(28)}
+				>
 					<img src={tech} alt="" />
 					<span>Technology</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 10 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(10)}
+				>
 					<img src={music} alt="" />
 					<span>Music</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 22 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(22)}
+				>
 					<img src={blogs} alt="" />
 					<span>Blogs</span>
-				</div>
-				<div className="sidebar__item">
+				</button>
+				<button
+					className={`sidebar__item ${categoryId === 25 ? 'active' : ''}`}
+					type="button"
+					onClick={() => setCategoryId(25)}
+				>
 					<img src={news} alt="" />
 					<span>News</span>
-				</div>
+				</button>
 			</nav>
 			<hr />
 			<div className="sidebar__list">
