@@ -5,7 +5,6 @@ import { viewCountConverter } from '../../utils';
 import './Feed.css';
 
 const API = import.meta.env.VITE_API_KEY;
-console.log(API);
 
 const Feed = ({ categoryId }) => {
 	const [data, setData] = useState([]);
@@ -27,6 +26,7 @@ const Feed = ({ categoryId }) => {
 				<Link
 					to={`/video/${item.snippet.categoryId}/${item.id}`}
 					className="card"
+					key={item.id}
 				>
 					<img src={item.snippet.thumbnails.medium.url} alt="" />
 					<h2>{item.snippet.title}</h2>
