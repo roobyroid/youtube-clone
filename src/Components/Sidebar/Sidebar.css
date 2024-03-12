@@ -67,3 +67,9 @@
 .sidebar__item.active img {
 	border-color: red;
 }
+
+@media (max-width: 900px) {
+	.sidebar {
+		display: none;
+	}
+}

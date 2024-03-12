@@ -51,3 +51,26 @@
 	width: 35px;
 	border-radius: 50%;
 }
+
+@media (max-width: 900px) {
+	.navbar__menu-toggle {
+		display: none;
+	}
+
+	.navbar__logo {
+		width: 90px;
+	}
+
+	.navbar__search-input {
+		width: 100px;
+	}
+
+	.navbar__right img {
+		display: none;
+	}
+
+	img.navbar__profile {
+		width: 30px;
+		display: block;
+	}
+}

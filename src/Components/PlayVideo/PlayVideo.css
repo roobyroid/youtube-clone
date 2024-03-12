@@ -92,6 +92,7 @@
 	font-size: 14px;
 	color: #5a5a5a;
 	margin: 0 0 5px;
+	word-break: break-word;
 }
 
 .play-video__description h4 {
@@ -139,4 +140,18 @@
 .play-video__comment-action span {
 	margin: 0 20px 0 0;
 	color: #5a5a5a;
+}
+
+@media (max-width: 900px) {
+	.play-video {
+		flex-basis: 100%;
+	}
+
+	.play-video__description {
+		padding-left: 0;
+	}
+
+	.play-video__info span {
+		margin: 15px 15px 0 0;
+	}
 }
