@@ -9,8 +9,10 @@
 }
 
 .recommended__item img {
-	flex-basis: 49%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
 	width: 50%;
+	border-radius: 5px;
 }
 
 .recommended__item-info {

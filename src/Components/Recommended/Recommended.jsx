@@ -1,49 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Recommended.css';
-import thumbnail1 from '../../assets/thumbnail1.png';
-import thumbnail2 from '../../assets/thumbnail2.png';
-import thumbnail3 from '../../assets/thumbnail3.png';
-import thumbnail4 from '../../assets/thumbnail4.png';
-import thumbnail5 from '../../assets/thumbnail5.png';
-import thumbnail6 from '../../assets/thumbnail6.png';
-import thumbnail7 from '../../assets/thumbnail7.png';
-import thumbnail8 from '../../assets/thumbnail8.png';
+import { valueConverter } from '../../utils';
+import {Link} from 'react-router-dom';
 
-const Recommended = () => {
+const API = import.meta.env.VITE_API_KEY;
+const Recommended = ({ categoryId }) => {
+	const [apiData, setApiData] = useState([]);
+
+	const fetchVideoData = async () => {
+		const videoDataUrl = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&videoCategoryId=${categoryId}&maxResults=45&key=${API}`;
+
+		await fetch(videoDataUrl)
+			.then((res) => res.json())
+			.then((data) => setApiData(data.items));
+	};
+
+	useEffect(() => {
+		fetchVideoData();
+	}, [categoryId]);
+
 	return (
 		<div className="recommended">
-			<div className="recommended__item">
-				<img src={thumbnail1} alt="" />
-				<div className="recommended__item-info">
-					<h4>Lorem ipsum dolor sit amet</h4>
-					<p>Lorem ipsum</p>
-					<p>15k views</p>
-				</div>
-			</div>
-			<div className="recommended__item">
-				<img src={thumbnail2} alt="" />
-				<div className="recommended__item-info">
-					<h4>Lorem ipsum dolor sit amet</h4>
-					<p>Lorem ipsum</p>
-					<p>15k views</p>
-				</div>
-			</div>
-			<div className="recommended__item">
-				<img src={thumbnail3} alt="" />
-				<div className="recommended__item-info">
-					<h4>Lorem ipsum dolor sit amet</h4>
-					<p>Lorem ipsum</p>
-					<p>15k views</p>
-				</div>
-			</div>
-			<div className="recommended__item">
-				<img src={thumbnail4} alt="" />
-				<div className="recommended__item-info">
-					<h4>Lorem ipsum dolor sit amet</h4>
-					<p>Lorem ipsum</p>
-					<p>15k views</p>
-				</div>
-			</div>
+			{apiData.map((item) => {
+				return (
+					<Link to={`/video/${item.snippet.categoryId}/${item.id}`} className="recommended__item" key={item.id}>
+						<img src={item.snippet.thumbnails.high.url} alt="" />
+						<div className="recommended__item-info">
+							<h4>{item.snippet.title}</h4>
+							<p>{item.snippet.channelTitle}</p>
+							<p>{valueConverter(item.statistics.viewCount)} views</p>
+						</div>
+					</Link>
+				);
+			})}
 		</div>
 	);
 };

@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { viewCountConverter } from '../../utils';
+import { valueConverter } from '../../utils';
 import './Feed.css';
 
 const API = import.meta.env.VITE_API_KEY;
@@ -32,7 +32,7 @@ const Feed = ({ categoryId }) => {
 					<h2>{item.snippet.title}</h2>
 					<h3>{item.snippet.channelTitle}</h3>
 					<p>
-						{viewCountConverter(item.statistics.viewCount)} views &bull;{' '}
+						{valueConverter(item.statistics.viewCount)} views &bull;{' '}
 						{moment(item.snippet.publishedAt).fromNow()}
 					</p>
 				</Link>

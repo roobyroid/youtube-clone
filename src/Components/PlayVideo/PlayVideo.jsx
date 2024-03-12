@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { viewCountConverter } from '../../utils';
+import { valueConverter } from '../../utils';
 import moment from 'moment';
+import {useParams} from 'react-router-dom';
 import './PlayVideo.css';
 import like from '../../assets/like.png';
 import dislike from '../../assets/dislike.png';
@@ -10,7 +11,8 @@ import jack from '../../assets/jack.png';
 import user_profile from '../../assets/user_profile.jpg';
 
 const API = import.meta.env.VITE_API_KEY;
-const PlayVideo = ({ videoId }) => {
+const PlayVideo = () => {
+	const { videoId } = useParams();
 	const [apiData, setApiData] = useState(null);
 	const [chanelData, setChanelData] = useState(null);
 	const [commentsData, setCommentsData] = useState([]);
@@ -49,11 +51,15 @@ const PlayVideo = ({ videoId }) => {
 			<iframe
 				className="play-video__content"
 				src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+				title="YouTube video player"
+				frameBorder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+				allowFullScreen
 			></iframe>
 			<h3>{apiData ? apiData.snippet.title : 'Title not found'}</h3>
 			<div className="play-video__info">
 				<p>
-					{apiData ? viewCountConverter(apiData.statistics.viewCount) : '25k'}{' '}
+					{apiData ? valueConverter(apiData.statistics.viewCount) : '25k'}{' '}
 					views &bull;{' '}
 					{apiData
 						? moment(apiData.snippet.publishedAt).fromNow()
@@ -62,7 +68,7 @@ const PlayVideo = ({ videoId }) => {
 				<div>
 					<span>
 						<img src={like} alt="" />{' '}
-						{apiData ? viewCountConverter(apiData.statistics.likeCount) : '25k'}
+						{apiData ? valueConverter(apiData.statistics.likeCount) : '25k'}
 					</span>
 					<span>
 						<img src={dislike} alt="" />
@@ -86,7 +92,7 @@ const PlayVideo = ({ videoId }) => {
 					<p>{apiData ? apiData.snippet.channelTitle : 'Channel not found'}</p>
 					<span>
 						{chanelData
-							? viewCountConverter(chanelData.statistics.subscriberCount)
+							? valueConverter(chanelData.statistics.subscriberCount)
 							: '0'}{' '}
 						subscribers
 					</span>
@@ -100,7 +106,7 @@ const PlayVideo = ({ videoId }) => {
 					: 'Description not found'}
 				<hr />
 				<h4>
-					{apiData ? viewCountConverter(apiData.statistics.commentCount) : '0'}{' '}
+					{apiData ? valueConverter(apiData.statistics.commentCount) : '0'}{' '}
 					comments
 				</h4>
 				{commentsData.map((comment) => (
@@ -126,7 +132,7 @@ const PlayVideo = ({ videoId }) => {
 							<p>{comment.snippet.topLevelComment.snippet.textOriginal}</p>
 							<div className="play-video__comment-action">
 								<img src={like} alt="" />
-								<span>{viewCountConverter(comment.snippet.topLevelComment.snippet.likeCount)}</span>
+								<span>{valueConverter(comment.snippet.topLevelComment.snippet.likeCount)}</span>
 								<img src={dislike} alt="" />
 							</div>
 						</div>

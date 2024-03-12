@@ -1,4 +1,4 @@
-const viewCountConverter = (value) => {
+const valueConverter = (value) => {
 	if (value > 1000000) {
 		return `${(value / 1000000).toFixed(1)}M`;
 	}
@@ -8,4 +8,4 @@ const viewCountConverter = (value) => {
 	return value;
 };
 
-export { viewCountConverter };
+export { valueConverter };
